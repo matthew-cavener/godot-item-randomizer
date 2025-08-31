@@ -1,0 +1,66 @@
+[gd_scene load_steps=2 format=3 uid="uid://d376ujb54e43v"]
+
+[ext_resource type="Script" uid="uid://hp8cx04e0gw5" path="res://example/texture_randomizer_example.gd" id="1"]
+
+[node name="TextureRandomizerExample" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1")
+
+[node name="VBox" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -200.0
+offset_top = -250.0
+offset_right = 200.0
+offset_bottom = 250.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Title" type="Label" parent="VBox"]
+layout_mode = 2
+text = "Texture Randomizer Example"
+horizontal_alignment = 1
+
+[node name="TextureDisplay" type="TextureRect" parent="VBox"]
+custom_minimum_size = Vector2(128, 128)
+layout_mode = 2
+size_flags_horizontal = 4
+expand_mode = 1
+stretch_mode = 1
+
+[node name="GetTextureButton" type="Button" parent="VBox"]
+layout_mode = 2
+size_flags_horizontal = 4
+text = "Get Random Texture"
+
+[node name="AvoidCountContainer" type="HBoxContainer" parent="VBox"]
+layout_mode = 2
+size_flags_horizontal = 4
+
+[node name="AvoidCountLabel" type="Label" parent="VBox/AvoidCountContainer"]
+layout_mode = 2
+text = "Avoid Recent Count:"
+
+[node name="AvoidCountSpinBox" type="SpinBox" parent="VBox/AvoidCountContainer"]
+layout_mode = 2
+max_value = 3.0
+value = 1.0
+
+[node name="HSeparator2" type="HSeparator" parent="VBox"]
+layout_mode = 2
+
+[node name="InfoLabel" type="Label" parent="VBox"]
+layout_mode = 2
+text = "Click the button to get a random texture!"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
