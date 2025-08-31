@@ -2,7 +2,7 @@
 
 A Godot 4.x addon for randomly selecting from an array with repetition prevention.
 Spun out from needing a way to add variety to notepad textures in [House on ||REDACTED|| St.](https://github.com/matthew-cavener/house-on-redacted-st)
-and being irritated when the _same texture **was selected repeatedly!**_ Ya know, _instead_ of doing the many other far more important things that needed done before the end of the jam.
+and being irritated when the _same texture **was selected repeatedly!**_
 
 Useful for anytime when players will notice repetition. Got 6 textures to choose from and only going to show one at a time for an extended period?
 Got a 9 page letter from your hyper detail oriented late uncle and think its strange 3 consecutive pages are all stained in the exact same way?
@@ -75,8 +75,7 @@ texture_randomizer.weights = new_weights
 ```
 
 The `weights` array _will_ be regenerated if the `exclusion_count` is changed, or if the size of the `items` array is not the same size as the `weights` array when a selection is made.
-
-I should probably make this more clear and well thought out, but it's fine for now.
+I should probably make that more clear and well thought out, but it's fine for now.
 
 ## API
 
@@ -98,8 +97,7 @@ This randomizer works with any type of item `Array`.
 - **Textures**: Randomize sprite textures!
 - **Scenes?**: Different room layouts or maybe enemy types?
 - **Strings?**: Random dialogue lines or flavor text if your dialogue system supports it I guess.
-- **Literally anything Godot lets you put in an `Array`!**: Who's gonna stop you?!
-  I'm not going to come to your home and pour out all your (oat)milk if you try to randomly select from an `Array[MissingResource]`!
+- **Literally anything Godot lets you put in an `Array`!**: Who's gonna stop you?! I'm not going to come to your home and pour out all your (oat)milk if you try to randomly select from an `Array[MissingResource]`!
 
 > **Note**: For audio randomization, just use the built-in [`AudioStreamRandomizer`](https://docs.godotengine.org/en/stable/classes/class_audiostreamrandomizer.html)
 > which can also change pitch and volume and is (more or less) what this is (more or less) inspired by.
@@ -108,10 +106,8 @@ This randomizer works with any type of item `Array`.
 
 The ItemRandomizer uses two arrays to prevent repetition while maintaining randomness:
 
-1. **Items Array**: Contains your items ordered by recency
-   (least recently used first, most recently used last)
-2. **Weights Array**: Contains weights for each item position,
-   with zeros at the end to exclude recent selections
+1. **Items Array**: Contains your items ordered by recency (least recently used first, most recently used last)
+2. **Weights Array**: Contains weights for each item position, with zeros at the end to exclude recent selections
 
 When you call `get_random_item()`:
 
