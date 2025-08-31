@@ -24,7 +24,8 @@ var texture_randomizer = ItemRandomizer.new(
 var texture = texture_randomizer.get_random_item()
 $Sprite.texture = texture
 
-# Works with any `Array` of items! (I'm pretty sure at least. Go wild, let me know if it works for ya)
+# Works with any `Array` of items!
+# (I'm pretty sure at least. Go wild, let me know if it works for ya)
 var enemy_randomizer = ItemRandomizer.new(
     items = [enemy1, enemy2, enemy3],
     exclusion_count = 2
@@ -64,7 +65,8 @@ texture_randomizer.exclusion_count = 1
 texture_randomizer.items.append(new_texture)
 texture_randomizer.items.erase(old_texture)
 
-# Shuffle items (especially useful immediately after adding/removing items)
+# Shuffle items
+# (especially useful immediately after adding/removing items)
 texture_randomizer.items.shuffle()
 
 # Even modify weights directly
