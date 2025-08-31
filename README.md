@@ -121,27 +121,29 @@ When you call `get_random_item()`:
 
 **Initial state:**
 
-| Item | Weight<br/>(exclusion_count=1) | Weight<br/>(exclusion_count=2) | Probability<br/>(exclusion_count=1) | Probability<br/>(exclusion_count=2) |
-|------|-----------------------------|-----------------------------|----------------------------------|----------------------------------|
-| <span style="color: red">Red</span> | <span style="color: red">5</span> | <span style="color: red">4</span> | <span style="color: red">33.3%</span> | <span style="color: red">40.0%</span> |
-| <span style="color: orange">Orange</span> | <span style="color: orange">4</span> | <span style="color: orange">3</span> | <span style="color: orange">26.7%</span> | <span style="color: orange">30.0%</span> |
-| <span style="color: yellow">Yellow</span> | <span style="color: yellow">3</span> | <span style="color: yellow">2</span> | <span style="color: yellow">20.0%</span> | <span style="color: yellow">20.0%</span> |
-| <span style="color: green">Green</span> | <span style="color: green">2</span> | <span style="color: green">1</span> | <span style="color: green">13.3%</span> | <span style="color: green">10.0%</span> |
-| <span style="color: blue">Blue</span> | <span style="color: blue">1</span> | <span style="color: blue">0</span> | <span style="color: blue">6.7%</span> | <span style="color: blue">0.0%</span> |
-| <span style="color: violet">Violet</span> | <span style="color: violet">0</span> | <span style="color: violet">0</span> | <span style="color: violet">0.0%</span> | <span style="color: violet">0.0%</span> |
+| Item | exclusion_count=1 | | exclusion_count=2 | |
+|------|-----------|-----------|-----------|-----------|
+| | **Weight** | **Probability** | **Weight** | **Probability** |
+| <span style="color: red">Red</span> | <span style="color: red">5</span> | <span style="color: red">33.3%</span> | <span style="color: red">4</span> | <span style="color: red">40.0%</span> |
+| <span style="color: orange">Orange</span> | <span style="color: orange">4</span> | <span style="color: orange">26.7%</span> | <span style="color: orange">3</span> | <span style="color: orange">30.0%</span> |
+| <span style="color: yellow">Yellow</span> | <span style="color: yellow">3</span> | <span style="color: yellow">20.0%</span> | <span style="color: yellow">2</span> | <span style="color: yellow">20.0%</span> |
+| <span style="color: green">Green</span> | <span style="color: green">2</span> | <span style="color: green">13.3%</span> | <span style="color: green">1</span> | <span style="color: green">10.0%</span> |
+| <span style="color: blue">Blue</span> | <span style="color: blue">1</span> | <span style="color: blue">6.7%</span> | <span style="color: blue">0</span> | <span style="color: blue">0.0%</span> |
+| <span style="color: violet">Violet</span> | <span style="color: violet">0</span> | <span style="color: violet">0.0%</span> | <span style="color: violet">0</span> | <span style="color: violet">0.0%</span> |
 
 ---
 
 **Selection 1: <span style="color: yellow">Yellow</span> selected**
 
-| Item | Weight<br/>(exclusion_count=1) | Weight<br/>(exclusion_count=2) | Probability<br/>(exclusion_count=1) | Probability<br/>(exclusion_count=2) |
-|------|-----------------------------|-----------------------------|----------------------------------|----------------------------------|
-| <span style="color: red">Red</span> | <span style="color: red">5</span> | <span style="color: red">4</span> | <span style="color: red">33.3%</span> | <span style="color: red">40.0%</span> |
-| <span style="color: orange">Orange</span> | <span style="color: orange">4</span> | <span style="color: orange">3</span> | <span style="color: orange">26.7%</span> | <span style="color: orange">30.0%</span> |
-| <span style="color: green">Green</span> | <span style="color: green">3</span> | <span style="color: green">2</span> | <span style="color: green">20.0%</span> | <span style="color: green">20.0%</span> |
-| <span style="color: blue">Blue</span> | <span style="color: blue">2</span> | <span style="color: blue">1</span> | <span style="color: blue">13.3%</span> | <span style="color: blue">10.0%</span> |
-| <span style="color: violet">Violet</span> | <span style="color: violet">1</span> | <span style="color: violet">0</span> | <span style="color: violet">6.7%</span> | <span style="color: violet">0.0%</span> |
-| <span style="color: yellow">Yellow</span> | <span style="color: yellow">0</span> | <span style="color: yellow">0</span> | <span style="color: yellow">0.0%</span> | <span style="color: yellow">0.0%</span> |
+| Item | exclusion_count=1 | | exclusion_count=2 | |
+|------|-----------|-----------|-----------|-----------|
+| | **Weight** | **Probability** | **Weight** | **Probability** |
+| <span style="color: red">Red</span> | <span style="color: red">5</span> | <span style="color: red">33.3%</span> | <span style="color: red">4</span> | <span style="color: red">40.0%</span> |
+| <span style="color: orange">Orange</span> | <span style="color: orange">4</span> | <span style="color: orange">26.7%</span> | <span style="color: orange">3</span> | <span style="color: orange">30.0%</span> |
+| <span style="color: green">Green</span> | <span style="color: green">3</span> | <span style="color: green">20.0%</span> | <span style="color: green">2</span> | <span style="color: green">20.0%</span> |
+| <span style="color: blue">Blue</span> | <span style="color: blue">2</span> | <span style="color: blue">13.3%</span> | <span style="color: blue">1</span> | <span style="color: blue">10.0%</span> |
+| <span style="color: violet">Violet</span> | <span style="color: violet">1</span> | <span style="color: violet">6.7%</span> | <span style="color: violet">0</span> | <span style="color: violet">0.0%</span> |
+| <span style="color: yellow">Yellow</span> | <span style="color: yellow">0</span> | <span style="color: yellow">0.0%</span> | <span style="color: yellow">0</span> | <span style="color: yellow">0.0%</span> |
 
 *Yellow moved to end and now has weight 0*
 
@@ -149,14 +151,15 @@ When you call `get_random_item()`:
 
 **Selection 2: <span style="color: red">Red</span> selected**
 
-| Item | Weight<br/>(exclusion_count=1) | Weight<br/>(exclusion_count=2) | Probability<br/>(exclusion_count=1) | Probability<br/>(exclusion_count=2) |
-|------|-----------------------------|-----------------------------|----------------------------------|----------------------------------|
-| <span style="color: orange">Orange</span> | <span style="color: orange">5</span> | <span style="color: orange">4</span> | <span style="color: orange">33.3%</span> | <span style="color: orange">40.0%</span> |
-| <span style="color: green">Green</span> | <span style="color: green">4</span> | <span style="color: green">3</span> | <span style="color: green">26.7%</span> | <span style="color: green">30.0%</span> |
-| <span style="color: blue">Blue</span> | <span style="color: blue">3</span> | <span style="color: blue">2</span> | <span style="color: blue">20.0%</span> | <span style="color: blue">20.0%</span> |
-| <span style="color: violet">Violet</span> | <span style="color: violet">2</span> | <span style="color: violet">1</span> | <span style="color: violet">13.3%</span> | <span style="color: violet">10.0%</span> |
-| <span style="color: yellow">Yellow</span> | <span style="color: yellow">1</span> | <span style="color: yellow">0</span> | <span style="color: yellow">6.7%</span> | <span style="color: yellow">0.0%</span> |
-| <span style="color: red">Red</span> | <span style="color: red">0</span> | <span style="color: red">0</span> | <span style="color: red">0.0%</span> | <span style="color: red">0.0%</span> |
+| Item | exclusion_count=1 | | exclusion_count=2 | |
+|------|-----------|-----------|-----------|-----------|
+| | **Weight** | **Probability** | **Weight** | **Probability** |
+| <span style="color: orange">Orange</span> | <span style="color: orange">5</span> | <span style="color: orange">33.3%</span> | <span style="color: orange">4</span> | <span style="color: orange">40.0%</span> |
+| <span style="color: green">Green</span> | <span style="color: green">4</span> | <span style="color: green">26.7%</span> | <span style="color: green">3</span> | <span style="color: green">30.0%</span> |
+| <span style="color: blue">Blue</span> | <span style="color: blue">3</span> | <span style="color: blue">20.0%</span> | <span style="color: blue">2</span> | <span style="color: blue">20.0%</span> |
+| <span style="color: violet">Violet</span> | <span style="color: violet">2</span> | <span style="color: violet">13.3%</span> | <span style="color: violet">1</span> | <span style="color: violet">10.0%</span> |
+| <span style="color: yellow">Yellow</span> | <span style="color: yellow">1</span> | <span style="color: yellow">6.7%</span> | <span style="color: yellow">0</span> | <span style="color: yellow">0.0%</span> |
+| <span style="color: red">Red</span> | <span style="color: red">0</span> | <span style="color: red">0.0%</span> | <span style="color: red">0</span> | <span style="color: red">0.0%</span> |
 
 *Red moved to end and now has weight 0*
 
@@ -164,13 +167,14 @@ When you call `get_random_item()`:
 
 **Selection 3: <span style="color: blue">Blue</span> selected**
 
-| Item | Weight<br/>(exclusion_count=1) | Weight<br/>(exclusion_count=2) | Probability<br/>(exclusion_count=1) | Probability<br/>(exclusion_count=2) |
-|------|-----------------------------|-----------------------------|----------------------------------|----------------------------------|
-| <span style="color: orange">Orange</span> | <span style="color: orange">5</span> | <span style="color: orange">4</span> | <span style="color: orange">33.3%</span> | <span style="color: orange">40.0%</span> |
-| <span style="color: green">Green</span> | <span style="color: green">4</span> | <span style="color: green">3</span> | <span style="color: green">26.7%</span> | <span style="color: green">30.0%</span> |
-| <span style="color: violet">Violet</span> | <span style="color: violet">3</span> | <span style="color: violet">2</span> | <span style="color: violet">20.0%</span> | <span style="color: violet">20.0%</span> |
-| <span style="color: yellow">Yellow</span> | <span style="color: yellow">2</span> | <span style="color: yellow">1</span> | <span style="color: yellow">13.3%</span> | <span style="color: yellow">10.0%</span> |
-| <span style="color: red">Red</span> | <span style="color: red">1</span> | <span style="color: red">0</span> | <span style="color: red">6.7%</span> | <span style="color: red">0.0%</span> |
-| <span style="color: blue">Blue</span> | <span style="color: blue">0</span> | <span style="color: blue">0</span> | <span style="color: blue">0.0%</span> | <span style="color: blue">0.0%</span> |
+| Item | exclusion_count=1 | | exclusion_count=2 | |
+|------|-----------|-----------|-----------|-----------|
+| | **Weight** | **Probability** | **Weight** | **Probability** |
+| <span style="color: orange">Orange</span> | <span style="color: orange">5</span> | <span style="color: orange">33.3%</span> | <span style="color: orange">4</span> | <span style="color: orange">40.0%</span> |
+| <span style="color: green">Green</span> | <span style="color: green">4</span> | <span style="color: green">26.7%</span> | <span style="color: green">3</span> | <span style="color: green">30.0%</span> |
+| <span style="color: violet">Violet</span> | <span style="color: violet">3</span> | <span style="color: violet">20.0%</span> | <span style="color: violet">2</span> | <span style="color: violet">20.0%</span> |
+| <span style="color: yellow">Yellow</span> | <span style="color: yellow">2</span> | <span style="color: yellow">13.3%</span> | <span style="color: yellow">1</span> | <span style="color: yellow">10.0%</span> |
+| <span style="color: red">Red</span> | <span style="color: red">1</span> | <span style="color: red">6.7%</span> | <span style="color: red">0</span> | <span style="color: red">0.0%</span> |
+| <span style="color: blue">Blue</span> | <span style="color: blue">0</span> | <span style="color: blue">0.0%</span> | <span style="color: blue">0</span> | <span style="color: blue">0.0%</span> |
 
 *Blue moved to end and now has weight 0*
