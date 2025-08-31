@@ -15,14 +15,20 @@ Spawning ~500 enemies in 500 milliseconds? Nobody's likely to be able to tell th
 
 ```gdscript
 # Create randomizer
-var texture_randomizer = ItemRandomizer.new(items = [texture1, texture2, texture3], exclusion_count = 1)
+var texture_randomizer = ItemRandomizer.new(
+    items = [texture1, texture2, texture3],
+    exclusion_count = 1
+)
 
 # Get random texture (prefers less recently selected ones)
 var texture = texture_randomizer.get_random_item()
 $Sprite.texture = texture
 
 # Works with any `Array` of items! (I'm pretty sure at least. Go wild, let me know if it works for ya)
-var enemy_randomizer = ItemRandomizer.new(items = [enemy1, enemy2, enemy3], exclusion_count = 2)
+var enemy_randomizer = ItemRandomizer.new(
+    items = [enemy1, enemy2, enemy3],
+    exclusion_count = 2
+)
 var next_enemy = enemy_randomizer.get_random_item()
 enemy = next_enemy.instantiate()
 ```
@@ -44,7 +50,10 @@ enemy = next_enemy.instantiate()
 
 ```gdscript
 # Initialize with any items and exclusion count
-var item_randomizer = ItemRandomizer.new([item1, item2, item3], 2)
+var item_randomizer = ItemRandomizer.new(
+    [item1, item2, item3],
+    2
+)
 
 # Or configure after creation
 var texture_randomizer = ItemRandomizer.new()
@@ -63,7 +72,9 @@ var new_weights = [16, 9, 4, 1, 0]
 texture_randomizer.weights = new_weights
 ```
 
-The `weights` array _will_ be regenerated if the `exclusion_count` is changed, or if the size of the `items` array is not the same size as the `weights` array when a selection is made. I should probably make this more clear and well thought out, but it's fine for now.
+The `weights` array _will_ be regenerated if the `exclusion_count` is changed, or if the size of the `items` array is not the same size as the `weights` array when a selection is made.
+
+I should probably make this more clear and well thought out, but it's fine for now.
 
 ## API
 
@@ -79,27 +90,34 @@ The `weights` array _will_ be regenerated if the `exclusion_count` is changed, o
 
 ## Use Cases
 
-This randomizer works with any type of item `Array` (AFAIK, only tested with `Array[Texture2D]` because that's all I needed, but I see no reason it _shouldn't_ work with other types):
+This randomizer works with any type of item `Array`.
+(AFAIK, only tested with `Array[Texture2D]` because that's all I needed, but I see no reason it _shouldn't_ work with other types):
 
 - **Textures**: Randomize sprite textures!
 - **Scenes?**: Different room layouts or maybe enemy types?
 - **Strings?**: Random dialogue lines or flavor text if your dialogue system supports it I guess.
-- **Literally anything Godot lets you put in an `Array`!**: Who's gonna stop you?! I'm not going to come to your home and pour out all your (oat)milk if you try to randomly select from an `Array[MissingResource]`!
+- **Literally anything Godot lets you put in an `Array`!**: Who's gonna stop you?!
+  I'm not going to come to your home and pour out all your (oat)milk if you try to randomly select from an `Array[MissingResource]`!
 
-> **Note**: For audio randomization, just use the built-in [`AudioStreamRandomizer`](https://docs.godotengine.org/en/stable/classes/class_audiostreamrandomizer.html) which can also change pitch and volume and is (more or less) what this is (more or less) inspired by.
+> **Note**: For audio randomization, just use the built-in [`AudioStreamRandomizer`](https://docs.godotengine.org/en/stable/classes/class_audiostreamrandomizer.html)
+> which can also change pitch and volume and is (more or less) what this is (more or less) inspired by.
 
 ## How It Works
 
 The ItemRandomizer uses two arrays to prevent repetition while maintaining randomness:
 
-1. **Items Array**: Contains your items ordered by recency (least recently used first, most recently used last)
-2. **Weights Array**: Contains weights for each item position, with zeros at the end to exclude recent selections
+1. **Items Array**: Contains your items ordered by recency
+   (least recently used first, most recently used last)
+2. **Weights Array**: Contains weights for each item position,
+   with zeros at the end to exclude recent selections
 
 When you call `get_random_item()`:
 
-1. Weighted selection ([`rand_weighted`](https://docs.godotengine.org/en/latest/classes/class_randomnumbergenerator.html#class-randomnumbergenerator-method-rand-weighted)) from the `items` array. Weights for weighted selection are the `weights` array.
+1. Weighted selection ([`rand_weighted`](https://docs.godotengine.org/en/latest/classes/class_randomnumbergenerator.html#class-randomnumbergenerator-method-rand-weighted)) from the `items` array.
+   Weights for weighted selection are the `weights` array.
 2. The selected item is moved to the end of the items array (marking it as most recent)
-3. With the default `exclusion_count = 1`, the last item (most recent) has weight 0 and cannot be selected in the next weighted random selection
+3. With the default `exclusion_count = 1`, the last item (most recent) has weight 0
+   and cannot be selected in the next weighted random selection
 
 ### Example Walkthrough
 
