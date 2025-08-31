@@ -74,7 +74,8 @@ var new_weights = [16, 9, 4, 1, 0]
 texture_randomizer.weights = new_weights
 ```
 
-The `weights` array _will_ be regenerated if the `exclusion_count` is changed, or if the size of the `items` array is not the same size as the `weights` array when a selection is made.
+> [!WARNING]
+> The `weights` array _will_ be regenerated if the `exclusion_count` is changed, or if the size of the `items` array is not the same size as the `weights` array when a selection is made.
 I should probably make that more clear and well thought out, but it's fine for now.
 
 ## API
