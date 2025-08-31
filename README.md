@@ -31,7 +31,7 @@ var enemy_randomizer = ItemRandomizer.new(
     exclusion_count = 2
 )
 var next_enemy = enemy_randomizer.get_random_item()
-enemy = next_enemy.instantiate()
+var enemy = next_enemy.instantiate()
 ```
 
 ## Installation
