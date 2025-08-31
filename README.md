@@ -99,8 +99,8 @@ This randomizer works with any type of item `Array`.
 - **Strings?**: Random dialogue lines or flavor text if your dialogue system supports it I guess.
 - **Literally anything Godot lets you put in an `Array`!**: Who's gonna stop you?! I'm not going to come to your home and pour out all your (oat)milk if you try to randomly select from an `Array[MissingResource]`!
 
-> **Note**: For audio randomization, just use the built-in [`AudioStreamRandomizer`](https://docs.godotengine.org/en/stable/classes/class_audiostreamrandomizer.html)
-> which can also change pitch and volume and is (more or less) what this is (more or less) inspired by.
+> [!NOTE]
+> For audio randomization, just use the built-in [`AudioStreamRandomizer`](https://docs.godotengine.org/en/stable/classes/class_audiostreamrandomizer.html) which can also change pitch and volume and is (more or less) what this is (more or less) inspired by.
 
 ## How It Works
 
