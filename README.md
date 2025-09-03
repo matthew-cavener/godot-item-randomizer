@@ -38,9 +38,11 @@ var enemy = next_enemy.instantiate()
 
 ### From Godot Asset Library
 
-1. Open AssetLib in Godot
-2. Search for "Item Randomizer"
-3. Install and enable in Project Settings > Plugins
+I still need to actually submit it.
+
+~~1. Open AssetLib in Godot~~
+~~2. Search for "Item Randomizer"~~
+~~3. Install and enable in Project Settings > Plugins~~
 
 ### Manual Installation
 
